@@ -13,17 +13,15 @@ void setup() {
  }
 }
 
-void glow(x,y){
+void glow(int x,int y){
   digitalWrite(rowpins[x], HIGH);
-  int i=0;
-  while(i!=y){
-    digitalWrite(colpins[i],HIGH);
-  }
-}
+  for(int i=0;i<8;i++)
+    {
+      if(i!=y){
+        digitalWrite(colpins[i],HIGH);
+      }
+    }
 }
 void loop() {
-  digitalWrite(rowpins[5], HIGH);
-
-
-  
+  glow(6,7);  
 }
